@@ -16,8 +16,8 @@ public class MovingObject : MonoBehaviour
   /// <summary>
   /// OnBecameInvisible is called when the renderer is no longer visible by any camera.
   /// </summary>
-  void OnBecameInvisible()
+  private void OnBecameInvisible()
   {
-    Destroy(gameObject);
+    // Destroy(gameObject);
   }
 }

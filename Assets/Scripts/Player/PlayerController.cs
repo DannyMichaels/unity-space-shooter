@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
 
   public Transform bottomLeftLimit, topRightLimit;
 
+  public Transform shotPoint; // position to fire shots from
+  public GameObject shot; // object to be shot when player is shooting
+
   // Start is called before the first frame update
   void Start()
   {
@@ -21,6 +24,7 @@ public class PlayerController : MonoBehaviour
   {
     HandlePlayerMove();
     KeepPlayerInBounds();
+    HandleShoot();
   }
 
   private void HandlePlayerMove()
@@ -37,5 +41,13 @@ public class PlayerController : MonoBehaviour
     float clampedY = Mathf.Clamp(transform.position.y, bottomLeftLimit.position.y, topRightLimit.position.y);
 
     transform.position = new Vector3(clampedX, clampedY, transform.position.z);
+  }
+
+  private void HandleShoot()
+  {
+    if (Input.GetButtonDown("Fire1"))
+    {
+      Instantiate(shot, shotPoint.position, shotPoint.rotation);
+    }
   }
 }

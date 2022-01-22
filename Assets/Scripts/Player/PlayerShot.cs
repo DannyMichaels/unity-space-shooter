@@ -5,6 +5,11 @@ using UnityEngine;
 public class PlayerShot : MonoBehaviour
 {
   public float shotSpeed = 7f;
+  private bool readyToRemove;
+
+  void Awake()
+  {
+  }
 
   // Start is called before the first frame update
   void Start()
@@ -21,5 +26,19 @@ public class PlayerShot : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D other)
   {
     Destroy(gameObject);
+  }
+
+  void OnBecameVisible()
+  {
+    readyToRemove = true;
+  }
+
+  private void OnBecameInvisible()
+  {
+    // destroy bullet once it goes out of screen
+    if (readyToRemove)
+    {
+      Destroy(gameObject);
+    }
   }
 }

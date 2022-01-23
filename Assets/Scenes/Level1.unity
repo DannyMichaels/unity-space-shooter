@@ -248,6 +248,7 @@ MonoBehaviour:
   topRightLimit: {fileID: 1555854366}
   shotPoint: {fileID: 1554510697}
   shot: {fileID: 151104035064456508, guid: 209559924d5f2db41b61d8417ea75012, type: 3}
+  timeBetweenShots: 0.2
 --- !u!58 &32817153
 CircleCollider2D:
   m_ObjectHideFlags: 0

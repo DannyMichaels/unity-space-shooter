@@ -13,6 +13,9 @@ public class PlayerController : MonoBehaviour
   public Transform shotPoint; // position to fire shots from
   public GameObject shot; // object to be shot when player is shooting
 
+  public float timeBetweenShots = .1f; // time to wait before each shot if Fire1 IS HELD DOWN.
+  private float shotCounter; // counter that will start after each shot.
+
   // Start is called before the first frame update
   void Start()
   {
@@ -45,9 +48,36 @@ public class PlayerController : MonoBehaviour
 
   private void HandleShoot()
   {
+    /*
+      as soon as player presses fire1 and is holding it:
+      shot counter will be equal to a certain amount and then we will start counting down
+      and if it goes below or == 0 we will put a new bullet into the scene and start counting down again.
+    */
+
+
+    // pressed once
     if (Input.GetButtonDown("Fire1"))
     {
       Instantiate(shot, shotPoint.position, shotPoint.rotation);
+
+      shotCounter = timeBetweenShots; // start counter
+    }
+
+
+    // holding the button
+    if (Input.GetButton("Fire1"))
+    {
+      // shotCounter will keep going down until it's 0, if it's 0 we will create the new bullet
+      shotCounter -= Time.deltaTime;
+
+      if (shotCounter <= 0)
+      {
+        // if it's less than or == 0, then that means we can create another shot
+        Instantiate(shot, shotPoint.position, shotPoint.rotation);
+
+        // it also means we need to restart our counter
+        shotCounter = timeBetweenShots;
+      }
     }
   }
 }

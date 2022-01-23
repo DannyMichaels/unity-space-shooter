@@ -5,6 +5,8 @@ using UnityEngine;
 public class PlayerShot : MonoBehaviour
 {
   public float shotSpeed = 7f;
+  public GameObject impactEffect;
+
   private bool readyToRemove;
 
   void Awake()
@@ -25,6 +27,7 @@ public class PlayerShot : MonoBehaviour
 
   private void OnTriggerEnter2D(Collider2D other)
   {
+    Instantiate(impactEffect, transform.position, transform.rotation);
     Destroy(gameObject);
   }
 

@@ -28,7 +28,13 @@ public class PlayerShot : MonoBehaviour
   private void OnTriggerEnter2D(Collider2D other)
   {
     Instantiate(impactEffect, transform.position, transform.rotation);
-    Destroy(gameObject);
+
+    if (other.CompareTag("Space Object"))
+    {
+      Destroy(other.gameObject); // destroy the other object
+    }
+
+    Destroy(this.gameObject); // destroy the bullet itself
   }
 
   void OnBecameVisible()

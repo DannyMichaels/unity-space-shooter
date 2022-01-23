@@ -6,6 +6,7 @@ public class PlayerShot : MonoBehaviour
 {
   public float shotSpeed = 7f;
   public GameObject impactEffect;
+  public GameObject objectExplosionEffect;
 
   private bool readyToRemove;
 
@@ -31,6 +32,7 @@ public class PlayerShot : MonoBehaviour
 
     if (other.CompareTag("Space Object"))
     {
+      Instantiate(objectExplosionEffect, other.transform.position, other.transform.rotation);
       Destroy(other.gameObject); // destroy the other object
     }
 

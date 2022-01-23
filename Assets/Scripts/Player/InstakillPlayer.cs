@@ -10,8 +10,6 @@ public class InstakillPlayer : MonoBehaviour
     if (other.CompareTag("Player"))
     {
       Instantiate(playerExplodeEffect, other.transform.position, other.transform.rotation);
-
-
       Destroy(other.gameObject);
     }
   }

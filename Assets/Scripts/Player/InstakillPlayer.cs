@@ -15,5 +15,4 @@ public class InstakillPlayer : MonoBehaviour
       PlayerHealthController.instance.KillPlayer();
     }
   }
-
 }

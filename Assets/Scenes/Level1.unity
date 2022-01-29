@@ -278,7 +278,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84c74416f0b520c4698ee0bccec1846e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerExplodeEffect: {fileID: 7733287749292666293, guid: 84e074711efb6374d9bc18dd6b973d64, type: 3}
+  currentHealth: 0
+  maxHealth: 3
+  deathEffect: {fileID: 7733287749292666293, guid: 84e074711efb6374d9bc18dd6b973d64, type: 3}
 --- !u!1 &37572875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1130,23 +1132,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1902093494 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8919760509790162578, guid: ce78143ac78768a478a17dea6e91be7f, type: 3}
-  m_PrefabInstance: {fileID: 8919760509247792065}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1902093495
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1902093494}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7c451c4123790245bbe5c88e791e5a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1910942328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1290,7 +1275,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8919760509790162582, guid: ce78143ac78768a478a17dea6e91be7f, type: 3}
       propertyPath: m_IsTrigger
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8919760509790162583, guid: ce78143ac78768a478a17dea6e91be7f, type: 3}
       propertyPath: m_RootOrder

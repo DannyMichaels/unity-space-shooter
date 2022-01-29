@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7733287749292666294}
   - component: {fileID: 7733287749292666313}
   - component: {fileID: 1117343318984929475}
+  - component: {fileID: 4989389299378099592}
   m_Layer: 0
   m_Name: Player Explosion Effect
   m_TagString: Untagged
@@ -213,3 +214,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4989389299378099592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733287749292666293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84c74416f0b520c4698ee0bccec1846e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  instance: {fileID: 0}
+  playerExplodeEffect: {fileID: 7733287749292666293}

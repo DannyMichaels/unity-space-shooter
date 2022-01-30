@@ -21,6 +21,7 @@ public class PlayerShot : MonoBehaviour
   // Update is called once per frame
   void Update()
   {
+    // shooting to the right
     transform.position += new Vector3(shotSpeed * Time.deltaTime, 0f, 0f);
   }
 

@@ -4,15 +4,33 @@ using UnityEngine;
 
 public class EnemyShot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+  public float shotSpeed = 7f;
+  public GameObject impactEffect;
+
+
+  // Start is called before the first frame update
+  void Start()
+  {
+
+  }
+
+
+  // Update is called once per frame
+  void Update()
+  {
+    // shooting to the left
+    transform.position -= new Vector3(shotSpeed * Time.deltaTime, 0f, 0f);
+  }
+
+  private void OnTriggerEnter2D(Collider2D other)
+  {
+    Instantiate(impactEffect, transform.position, transform.rotation);
+
+    if (other.CompareTag("Player"))
     {
-        
+      PlayerHealthController.instance.DamagePlayer();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    Destroy(this.gameObject); // destroy the bullet itself
+  }
 }

@@ -12,16 +12,22 @@ public class EnemyController : MonoBehaviour
   public float changeDirectionXPoint; // the point on the x axis where the enemy will start changing direction
   public Vector2 changedDirection; // direction to go once the direction has been changed
 
+  public GameObject shotToFire; // object to be shot when enemy is shooting
+  public Transform firePoint;
+  public float timeBetweenShots; // how long to wait between each shot
+  private float shotWaitCounter;
+
   // Start is called before the first frame update
   void Start()
   {
-
+    shotWaitCounter = timeBetweenShots;
   }
 
   // Update is called once per frame
   void Update()
   {
     HandleEnemyMove();
+    HandleEnemyShoot();
   }
 
 
@@ -55,5 +61,17 @@ public class EnemyController : MonoBehaviour
     float newYPos = y * moveSpeed * Time.deltaTime;
 
     return new Vector3(newXPos, newYPos, 0f);
+  }
+
+  private void HandleEnemyShoot()
+  {
+    shotWaitCounter -= Time.deltaTime;
+
+    // if less than or equal to zero, it means we are done waiting
+    if (shotWaitCounter <= 0)
+    {
+      shotWaitCounter = timeBetweenShots; // reset counter
+      Instantiate(shotToFire, firePoint.position, firePoint.rotation);
+    }
   }
 }

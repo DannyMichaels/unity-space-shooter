@@ -1369,10 +1369,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Green
       objectReference: {fileID: 0}
-    - target: {fileID: 5346357760563132237, guid: 51f9c4c8fe68d3745a3414beb6dba3ec, type: 3}
-      propertyPath: canShoot
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f9c4c8fe68d3745a3414beb6dba3ec, type: 3}
 --- !u!1001 &8919760509247792065

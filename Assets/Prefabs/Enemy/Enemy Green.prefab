@@ -137,6 +137,7 @@ MonoBehaviour:
   shotToFire: {fileID: 7558377797120226797, guid: 2146ddc234e68e44a8e115d3c2e86c98, type: 3}
   firePoint: {fileID: 951577374}
   timeBetweenShots: 0.5
+  canShoot: 1
 --- !u!61 &5346357760563132224
 BoxCollider2D:
   m_ObjectHideFlags: 0

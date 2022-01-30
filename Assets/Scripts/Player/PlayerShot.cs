@@ -8,8 +8,6 @@ public class PlayerShot : MonoBehaviour
   public GameObject impactEffect;
   public GameObject objectExplosionEffect;
 
-  private bool readyToRemove;
-
   void Awake()
   {
   }
@@ -37,19 +35,5 @@ public class PlayerShot : MonoBehaviour
     }
 
     Destroy(this.gameObject); // destroy the bullet itself
-  }
-
-  void OnBecameVisible()
-  {
-    readyToRemove = true;
-  }
-
-  private void OnBecameInvisible()
-  {
-    // destroy bullet once it goes out of screen
-    if (readyToRemove)
-    {
-      Destroy(gameObject);
-    }
   }
 }

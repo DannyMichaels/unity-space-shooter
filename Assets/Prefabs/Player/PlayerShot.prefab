@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 151104035064456509}
   - component: {fileID: 151104035064456511}
   - component: {fileID: 151104035064456504}
+  - component: {fileID: -7974410798079236415}
   - component: {fileID: 151104035064456505}
   - component: {fileID: 830197627}
   m_Layer: 9
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 797497713
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: f3bf4db56bcb67544bd6a07e8ce388e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -127,6 +128,18 @@ MonoBehaviour:
   shotSpeed: 7
   impactEffect: {fileID: 7199110289190478087, guid: 04dabd8c050d7cf43ad4f128b5de5f22, type: 3}
   objectExplosionEffect: {fileID: 2271566440241391293, guid: 9d5920cf2151d024c8b3ad754f974d1e, type: 3}
+--- !u!114 &-7974410798079236415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151104035064456508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c277a9a0514c3324aa72f6b33cb78502, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!50 &151104035064456505
 Rigidbody2D:
   serializedVersion: 4

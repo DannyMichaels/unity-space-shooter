@@ -753,7 +753,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &644789516
 MonoBehaviour:
@@ -1327,7 +1327,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5346357760563132227, guid: 51f9c4c8fe68d3745a3414beb6dba3ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.38
+      value: 13.95
       objectReference: {fileID: 0}
     - target: {fileID: 5346357760563132227, guid: 51f9c4c8fe68d3745a3414beb6dba3ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1369,6 +1369,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy Green
       objectReference: {fileID: 0}
+    - target: {fileID: 5346357760563132237, guid: 51f9c4c8fe68d3745a3414beb6dba3ec, type: 3}
+      propertyPath: canShoot
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51f9c4c8fe68d3745a3414beb6dba3ec, type: 3}
 --- !u!1001 &8919760509247792065
@@ -1384,7 +1388,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8919760509790162583, guid: ce78143ac78768a478a17dea6e91be7f, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8919760509790162583, guid: ce78143ac78768a478a17dea6e91be7f, type: 3}
       propertyPath: m_LocalPosition.x

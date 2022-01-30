@@ -17,6 +17,9 @@ public class EnemyController : MonoBehaviour
   public float timeBetweenShots; // how long to wait between each shot
   private float shotWaitCounter;
 
+  public bool canShoot; // is this a shooting enemy? 
+  private bool allowShooting; // set when enemy appears on screen (shouldn't shoot when off screen)
+
   // Start is called before the first frame update
   void Start()
   {
@@ -37,8 +40,6 @@ public class EnemyController : MonoBehaviour
 
     if (!shouldChangeDirection)
     {
-
-
       transform.position += calcNewPosition(startDirection.x, startDirection.y);
     }
     else
@@ -65,6 +66,8 @@ public class EnemyController : MonoBehaviour
 
   private void HandleEnemyShoot()
   {
+    if (!allowShooting) return;
+
     shotWaitCounter -= Time.deltaTime;
 
     // if less than or equal to zero, it means we are done waiting
@@ -72,6 +75,15 @@ public class EnemyController : MonoBehaviour
     {
       shotWaitCounter = timeBetweenShots; // reset counter
       Instantiate(shotToFire, firePoint.position, firePoint.rotation);
+    }
+  }
+
+  // let enemy shoot when he's on screen (without this it will shoot off screen which is unfair lol)
+  void OnBecameVisible()
+  {
+    if (canShoot)
+    {
+      allowShooting = true;
     }
   }
 }

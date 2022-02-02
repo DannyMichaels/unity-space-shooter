@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 5346357760563132227}
   - component: {fileID: 5346357760563132226}
   - component: {fileID: 5346357760563132237}
+  - component: {fileID: 2388567398800122251}
   - component: {fileID: 5346357760563132224}
   - component: {fileID: 5346357760563132225}
   - component: {fileID: 5346357760563132230}
@@ -136,8 +137,22 @@ MonoBehaviour:
   changedDirection: {x: -0.75, y: -0.5}
   shotToFire: {fileID: 7558377797120226797, guid: 2146ddc234e68e44a8e115d3c2e86c98, type: 3}
   firePoint: {fileID: 951577374}
-  timeBetweenShots: 0.5
+  timeBetweenShots: 1
   canShoot: 1
+--- !u!114 &2388567398800122251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5346357760563132236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc4f2f905afdc5949abd4c984c28f8f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentHealth: 3
+  deathEffect: {fileID: 6088144577470939238, guid: ffb20249b2bfa4e4ebc08459a48be31c, type: 3}
 --- !u!61 &5346357760563132224
 BoxCollider2D:
   m_ObjectHideFlags: 0

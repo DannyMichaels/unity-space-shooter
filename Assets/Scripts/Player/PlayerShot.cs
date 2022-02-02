@@ -31,10 +31,25 @@ public class PlayerShot : MonoBehaviour
 
     if (other.CompareTag("Space Object"))
     {
-      Instantiate(objectExplosionEffect, other.transform.position, other.transform.rotation);
-      Destroy(other.gameObject); // destroy the other object
+      DestroySpaceObject(other);
     }
 
+    if (other.CompareTag("Enemy"))
+    {
+      HitEnemy(other);
+    }
     Destroy(this.gameObject); // destroy the bullet itself
+  }
+
+  private void DestroySpaceObject(Collider2D other)
+  {
+    Instantiate(objectExplosionEffect, other.transform.position, other.transform.rotation);
+    Destroy(other.gameObject); // destroy the other object
+  }
+
+  private void HitEnemy(Collider2D other)
+  {
+    // using this instead of instance so it only hurts this enemy and not all enemies in the scene
+    other.GetComponent<EnemyHealthController>().DamageEnemy();
   }
 }

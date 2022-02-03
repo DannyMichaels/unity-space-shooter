@@ -130,11 +130,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a19ba860ca49d2b4ab641229965f6743, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  moveSpeed: 2
   startDirection: {x: -1, y: 0}
   shouldChangeDirection: 1
-  changeDirectionXPoint: 0
-  changedDirection: {x: -1, y: 0}
+  changeDirectionXPoint: -2
+  changedDirection: {x: -0.5, y: -0.5}
   shotToFire: {fileID: 7558377797120226797, guid: 2146ddc234e68e44a8e115d3c2e86c98, type: 3}
   firePoint: {fileID: 2561438521415300534}
   timeBetweenShots: 0
@@ -151,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc4f2f905afdc5949abd4c984c28f8f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHealth: 1
+  currentHealth: 3
   deathEffect: {fileID: 6088144577470939238, guid: ffb20249b2bfa4e4ebc08459a48be31c, type: 3}
 --- !u!61 &7619557088381282792
 BoxCollider2D:

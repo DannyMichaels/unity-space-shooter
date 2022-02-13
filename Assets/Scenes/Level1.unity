@@ -281,6 +281,8 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 3
   deathEffect: {fileID: 7733287749292666293, guid: 84e074711efb6374d9bc18dd6b973d64, type: 3}
+  invincibilityDuration: 2
+  theSR: {fileID: 32817149}
 --- !u!1 &37572875
 GameObject:
   m_ObjectHideFlags: 0
@@ -1214,6 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLives: 3
+  respawnTime: 2
 --- !u!4 &1733829442
 Transform:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class InstakillPlayer : MonoBehaviour
     if (other.CompareTag("Player"))
     {
       PlayerHealthController.instance.KillPlayer();
+      PlayerHealthController.instance.RespawnPlayer();
     }
   }
 }

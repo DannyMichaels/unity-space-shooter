@@ -7,9 +7,6 @@ public class PlayerHealthController : MonoBehaviour
   public int currentHealth;
   public int maxHealth;
 
-
-
-
   [HideInInspector]
   public static PlayerHealthController instance; // instance = Singleton: create a version of this script that only one version of it can exist
   public GameObject deathEffect;
@@ -44,7 +41,14 @@ public class PlayerHealthController : MonoBehaviour
   public void KillPlayer()
   {
     Instantiate(deathEffect, transform.position, transform.rotation);
-    // Destroy(gameObject);
     gameObject.SetActive(false);
+
+    GameManager.instance.HandlePlayerDeath();
+  }
+
+  public void RespawnPlayer()
+  {
+    gameObject.SetActive(true);
+    currentHealth = maxHealth;
   }
 }

@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
 
   public void StartGameOver()
   {
-
+    UIManager.instance.gameOverScreen.SetActive(true);
+    WaveManager.instance.canSpawnWaves = false;
   }
 }

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-
+    UIManager.instance.UpdateCurrentLivesText();
   }
 
   // Update is called once per frame
@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
     WaveManager.instance.canSpawnWaves = false; // stop spawning waves
 
     currentLives--;
+    UIManager.instance.UpdateCurrentLivesText();
+
     if (currentLives > 0)
     {
       // respawn

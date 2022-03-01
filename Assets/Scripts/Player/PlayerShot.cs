@@ -32,6 +32,8 @@ public class PlayerShot : MonoBehaviour
     if (other.CompareTag("Space Object"))
     {
       DestroySpaceObject(other);
+
+      GameManager.instance.AddScore(50);
     }
 
     if (other.CompareTag("Enemy"))

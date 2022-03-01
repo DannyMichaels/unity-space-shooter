@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
   public static GameManager instance;
   public int currentLives = 3;// how many lives player has in each levels
   public float respawnTime = 2f;
+  public int currentScore;
 
   private void Awake()
   {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
   void Start()
   {
     UIManager.instance.UpdateCurrentLivesText();
+    UIManager.instance.UpdateCurrentScoreText();
   }
 
   // Update is called once per frame
@@ -55,5 +57,11 @@ public class GameManager : MonoBehaviour
   {
     UIManager.instance.gameOverScreen.SetActive(true);
     WaveManager.instance.canSpawnWaves = false;
+  }
+
+  public void AddScore(int scoreToAdd)
+  {
+    currentScore += scoreToAdd;
+    UIManager.instance.UpdateCurrentScoreText();
   }
 }

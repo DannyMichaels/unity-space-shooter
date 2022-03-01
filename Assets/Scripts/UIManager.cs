@@ -9,7 +9,7 @@ public class UIManager : MonoBehaviour
   public static UIManager instance;
 
   public GameObject gameOverScreen;
-  public Text currentLivesText;
+  public Text currentLivesText, scoreText;
 
   public Slider healthBar;
 
@@ -46,5 +46,11 @@ public class UIManager : MonoBehaviour
   {
     int newLivesValue = GameManager.instance.currentLives;
     currentLivesText.text = $"x {newLivesValue}";
+  }
+
+  public void UpdateCurrentScoreText()
+  {
+    int newScoreValue = GameManager.instance.currentScore;
+    scoreText.text = $"Score: {newScoreValue}";
   }
 }

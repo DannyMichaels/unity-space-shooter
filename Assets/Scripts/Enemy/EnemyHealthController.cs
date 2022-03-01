@@ -6,6 +6,7 @@ public class EnemyHealthController : MonoBehaviour
 {
   public int currentHealth;
   public GameObject deathEffect;
+  public int scoreValue = 100; // score to add when enemy is killed
 
   // Start is called before the first frame update
   void Start()
@@ -24,6 +25,8 @@ public class EnemyHealthController : MonoBehaviour
     currentHealth--;
     if (currentHealth <= 0)
     {
+      GameManager.instance.AddScore(scoreValue);
+
       DestroyEnemy();
     }
   }

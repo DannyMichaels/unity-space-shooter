@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyHealthController : MonoBehaviour
 {
-
   public int currentHealth;
   public GameObject deathEffect;
 

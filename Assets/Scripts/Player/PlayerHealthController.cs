@@ -19,7 +19,8 @@ public class PlayerHealthController : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
-    currentHealth = maxHealth;
+    UIManager.instance.healthBar.maxValue = maxHealth;
+    SetCurrentHealth(maxHealth);
   }
 
   // Update is called once per frame
@@ -29,10 +30,9 @@ public class PlayerHealthController : MonoBehaviour
 
   public void DamagePlayer()
   {
-    bool canTakeDamage = PlayerInvincibility.instance.invincibleCounter <= 0;
-    if (!canTakeDamage) return;
+    if (!PlayerInvincibility.instance.CanTakeDamage()) return;
 
-    currentHealth -= 1;
+    SetCurrentHealth(currentHealth - 1);
 
     if (currentHealth <= 0)
     {
@@ -51,8 +51,14 @@ public class PlayerHealthController : MonoBehaviour
   public void RespawnPlayer()
   {
     gameObject.SetActive(true);
-    currentHealth = maxHealth;
+    SetCurrentHealth(maxHealth);
 
     PlayerInvincibility.instance.MakeInvincibile();
+  }
+
+  private void SetCurrentHealth(int value)
+  {
+    currentHealth = value;
+    UIManager.instance.healthBar.value = currentHealth;
   }
 }

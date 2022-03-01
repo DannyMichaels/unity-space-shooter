@@ -11,6 +11,8 @@ public class UIManager : MonoBehaviour
   public GameObject gameOverScreen;
   public Text currentLivesText;
 
+  public Slider healthBar;
+
   private void Awake()
   {
     instance = this;

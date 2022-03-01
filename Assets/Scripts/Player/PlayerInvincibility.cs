@@ -43,4 +43,9 @@ public class PlayerInvincibility : MonoBehaviour
   {
     theSR.color = new Color(theSR.color.r, theSR.color.g, theSR.color.b, alpha); // change transparency so player knows he's invincible or not
   }
+
+  public bool CanTakeDamage()
+  {
+    return invincibleCounter <= 0;
+  }
 }

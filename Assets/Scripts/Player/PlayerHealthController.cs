@@ -11,6 +11,9 @@ public class PlayerHealthController : MonoBehaviour
   public static PlayerHealthController instance; // instance = Singleton: create a version of this script that only one version of it can exist
   public GameObject deathEffect;
 
+  public int shieldPower, shieldMaxPower = 2;
+  public GameObject theShield;
+
   void Awake()
   {
     instance = this;
@@ -21,6 +24,11 @@ public class PlayerHealthController : MonoBehaviour
   {
     UIManager.instance.healthBar.maxValue = maxHealth;
     SetCurrentHealth(maxHealth);
+
+    UIManager.instance.shieldBar.maxValue = shieldMaxPower;
+    UIManager.instance.shieldBar.value = shieldPower;
+
+    ActivateShield();
   }
 
   // Update is called once per frame
@@ -31,6 +39,18 @@ public class PlayerHealthController : MonoBehaviour
   public void DamagePlayer()
   {
     if (!PlayerInvincibility.instance.CanTakeDamage()) return;
+
+    if (theShield.activeInHierarchy)
+    {
+      shieldPower--;
+      if (shieldPower <= 0)
+      {
+        theShield.SetActive(false);
+      }
+
+      UIManager.instance.shieldBar.value = shieldPower;
+      return;
+    }
 
     SetCurrentHealth(currentHealth - 1);
 
@@ -60,5 +80,13 @@ public class PlayerHealthController : MonoBehaviour
   {
     currentHealth = value;
     UIManager.instance.healthBar.value = currentHealth;
+  }
+
+  public void ActivateShield()
+  {
+    theShield.SetActive(true);
+    shieldPower = shieldMaxPower;
+
+    UIManager.instance.shieldBar.value = shieldPower;
   }
 }

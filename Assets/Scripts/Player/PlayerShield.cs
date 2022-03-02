@@ -18,8 +18,6 @@ public class PlayerShield : MonoBehaviour
   {
     UIManager.instance.shieldBar.maxValue = shieldMaxPower;
     UIManager.instance.shieldBar.value = shieldPower;
-
-    ActivateShield(); // todo: should be picked up
   }
 
   // Update is called once per frame

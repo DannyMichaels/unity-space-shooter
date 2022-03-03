@@ -45,6 +45,5 @@ public class PlayerSpeedBoost : MonoBehaviour
   public void DeActivateSpeedBoost()
   {
     PlayerController.instance.moveSpeed = normalSpeed;
-
   }
 }

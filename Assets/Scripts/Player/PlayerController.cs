@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+  public static PlayerController instance;
   public float moveSpeed;
   public Rigidbody2D theRB;
 
@@ -15,6 +15,13 @@ public class PlayerController : MonoBehaviour
 
   public float timeBetweenShots = .1f; // time to wait before each shot if Fire1 IS HELD DOWN.
   private float shotWaitCounter; // counter that will start after each shot.
+
+
+
+  void Awake()
+  {
+    instance = this;
+  }
 
   // Start is called before the first frame update
   void Start()

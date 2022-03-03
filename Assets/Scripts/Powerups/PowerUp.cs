@@ -5,6 +5,7 @@ using UnityEngine;
 public class PowerUp : MonoBehaviour
 {
   public bool isShield;
+  public bool isSpeedBoost;
 
   // Start is called before the first frame update
   void Start()
@@ -27,6 +28,11 @@ public class PowerUp : MonoBehaviour
       if (isShield)
       {
         PlayerShield.instance.ActivateShield();
+      }
+
+      if (isSpeedBoost)
+      {
+        PlayerSpeedBoost.instance.ActivateSpeedBoost();
       }
     }
   }

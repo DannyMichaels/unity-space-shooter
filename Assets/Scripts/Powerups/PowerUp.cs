@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// power up collide trigger script
 public class PowerUp : MonoBehaviour
 {
   public bool isShield;
   public bool isSpeedBoost;
+  public bool isDoubleShot;
 
   // Start is called before the first frame update
   void Start()
@@ -33,6 +35,11 @@ public class PowerUp : MonoBehaviour
       if (isSpeedBoost)
       {
         PlayerSpeedBoost.instance.ActivateSpeedBoost();
+      }
+
+      if (isDoubleShot)
+      {
+        PlayerDoubleShot.instance.Activate();
       }
     }
   }

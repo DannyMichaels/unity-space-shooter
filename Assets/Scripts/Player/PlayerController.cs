@@ -16,8 +16,6 @@ public class PlayerController : MonoBehaviour
   public float timeBetweenShots = .1f; // time to wait before each shot if Fire1 IS HELD DOWN.
   private float shotWaitCounter; // counter that will start after each shot.
 
-
-
   void Awake()
   {
     instance = this;
@@ -34,7 +32,7 @@ public class PlayerController : MonoBehaviour
   {
     HandlePlayerMove();
     KeepPlayerInBounds();
-    HandleShoot();
+    OnShootButtonPressed();
   }
 
   private void HandlePlayerMove()
@@ -53,7 +51,7 @@ public class PlayerController : MonoBehaviour
     transform.position = new Vector3(clampedX, clampedY, transform.position.z);
   }
 
-  private void HandleShoot()
+  private void OnShootButtonPressed()
   {
     /*
       as soon as player presses fire1 and is holding it:
@@ -65,11 +63,9 @@ public class PlayerController : MonoBehaviour
     // pressed once
     if (Input.GetButtonDown("Fire1"))
     {
-      Instantiate(shot, shotPoint.position, shotPoint.rotation);
-
+      Shoot();
       shotWaitCounter = timeBetweenShots; // start counter
     }
-
 
     // holding the button
     if (Input.GetButton("Fire1"))
@@ -82,11 +78,28 @@ public class PlayerController : MonoBehaviour
       if (shotWaitCounter <= 0)
       {
         // if it's less than or == 0, then that means we can create another shot
-        Instantiate(shot, shotPoint.position, shotPoint.rotation);
-
+        Shoot();
         // it also means we need to restart our counter
         shotWaitCounter = timeBetweenShots;
       }
     }
+  }
+
+  public void Shoot()
+  {
+    if (!PlayerDoubleShot.instance.doubleShotActive)
+    {
+      Instantiate(shot, shotPoint.position, shotPoint.rotation);
+    }
+    else
+    {
+      PlayerDoubleShot.instance.Fire(shot, shotPoint);
+    }
+  }
+
+  public void DeActivatePowerups()
+  {
+    PlayerDoubleShot.instance.DeActivate();
+    PlayerSpeedBoost.instance.DeActivateSpeedBoost();
   }
 }

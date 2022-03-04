@@ -50,7 +50,7 @@ public class PlayerHealthController : MonoBehaviour
   {
     Instantiate(deathEffect, transform.position, transform.rotation);
     gameObject.SetActive(false);
-
+    PlayerController.instance.DeActivatePowerups();
     GameManager.instance.HandlePlayerDeath();
   }
 

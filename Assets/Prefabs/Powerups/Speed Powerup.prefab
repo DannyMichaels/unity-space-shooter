@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4226394980421617275}
   - component: {fileID: 4226394980421617277}
   - component: {fileID: 4226394980421617274}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Speed Powerup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,6 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isShield: 0
   isSpeedBoost: 1
+  isDoubleShot: 0
 --- !u!114 &4226394980421617277
 MonoBehaviour:
   m_ObjectHideFlags: 0

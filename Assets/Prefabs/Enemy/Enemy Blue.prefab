@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 7619557088381282792}
   - component: {fileID: 7619557088381282793}
   - component: {fileID: 7619557088381282798}
+  - component: {fileID: 8932833483756350364}
   m_Layer: 10
   m_Name: Enemy Blue
   m_TagString: Enemy
@@ -153,6 +154,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 3
   deathEffect: {fileID: 6088144577470939238, guid: ffb20249b2bfa4e4ebc08459a48be31c, type: 3}
+  scoreValue: 100
+  powerUps:
+  - {fileID: 4226394980421617271, guid: 292e663be8d09af40b32180876eb42ba, type: 3}
+  - {fileID: 7334844824804826009, guid: 39429e5e877e449458bd725a4df98df0, type: 3}
+  - {fileID: 3795661034559668928, guid: 5f32af46675685842847b7a72065101b, type: 3}
 --- !u!61 &7619557088381282792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -203,3 +209,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c277a9a0514c3324aa72f6b33cb78502, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8932833483756350364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7619557088381282788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d9416290913e14f8bb0c677ea1ee6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUps:
+  - {fileID: 3795661034559668928, guid: 5f32af46675685842847b7a72065101b, type: 3}
+  - {fileID: 7334844824804826009, guid: 39429e5e877e449458bd725a4df98df0, type: 3}
+  - {fileID: 4226394980421617271, guid: 292e663be8d09af40b32180876eb42ba, type: 3}

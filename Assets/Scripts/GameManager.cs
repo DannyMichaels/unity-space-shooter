@@ -60,6 +60,7 @@ public class GameManager : MonoBehaviour
   {
     UIManager.instance.gameOverScreen.SetActive(true);
     WaveManager.instance.canSpawnWaves = false;
+    MusicController.instance.PlayGameOverMusic();
   }
 
   public void AddScore(int scoreToAdd)

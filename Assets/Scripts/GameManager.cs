@@ -81,4 +81,10 @@ public class GameManager : MonoBehaviour
     highScore = PlayerPrefs.GetInt("HighScore");
     UIManager.instance.highScoreText.text = $"Hi-Score: {highScore}";
   }
+
+  public IEnumerator EndLevelCo()
+  {
+    UIManager.instance.levelEndScreen.SetActive(true);
+    yield return new WaitForSeconds(.5f);
+  }
 }

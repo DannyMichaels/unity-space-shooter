@@ -59,7 +59,7 @@ public class WaveManager : MonoBehaviour
 
   public void ContinueSpawning()
   {
-    if (currentWaveIndex < waves.Length - 1 && timeToNextWave > 0)
+    if (currentWaveIndex <= waves.Length - 1 && timeToNextWave > 0)
     {
       canSpawnWaves = true;
     }

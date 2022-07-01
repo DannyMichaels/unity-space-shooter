@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
 {
   public static UIManager instance;
 
-  public GameObject gameOverScreen;
+  public GameObject gameOverScreen, levelEndScreen;
   public Text currentLivesText, scoreText, highScoreText;
 
   public Slider healthBar, shieldBar;
